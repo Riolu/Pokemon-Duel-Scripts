@@ -1,10 +1,22 @@
 ; 夜神模拟器 width:360 height:670
 #IfWinActive ahk_class Qt5QWindowIcon
 ^z::
+	InputBox, Var, Quest Selection, Enter the which quest you want to choose.
 	outer:
 	Loop
-	{
-		Click 270 250 ; select the level
+	{	
+		if Var = 1
+			Click 275, 568
+		if Var = 2
+			Click 275, 488
+		if Var = 3
+			Click 275, 411
+		if Var = 4
+			Click 275, 329
+		if Var = 5
+			Click 275, 250
+			
+			
 		Sleep 10000  	
 		Click 170, 580	; click play button
 		Sleep 30000 
@@ -53,9 +65,10 @@
 	}
 Return
 
-^s::Exitapp
-
 #IfWinActive
+
+
+^s::Exitapp
 
 
 
