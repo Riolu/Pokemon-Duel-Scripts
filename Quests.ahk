@@ -1,11 +1,21 @@
-; 夜神模拟器 width:360 height:670
-#IfWinActive ahk_class Qt5QWindowIcon
 ^z::
+	; Initialize the id and class of the simulator
+	WinGet, target_id, ID, A
+	WinGetClass, target_class, ahk_id %target_id%
+	WinGetPos, , , Width, Height, ahk_id %target_id%
+	;MsgBox, The active window's ID is "%target_id%"`n Class is "%target_class%`n Width is %Width%`n Height is %Height%.
+
+	
+	
+	
 	InputBox, Var, Quest Selection, Enter the which quest you want to choose.
 	
 	outer:
 	Loop
 	{	
+		WinActivate, ahk_id %target_id%
+		
+		
 		if Var = 1
 			Click 275, 568
 		if Var = 2
@@ -31,7 +41,8 @@
 			Click 34, 640 		; click BACK button
 			Sleep 5000
 			
-			Sleep 330000		; wait until energy is full
+			Sleep 3600000		; wait one hour
+			; Sleep 330000		; wait until energy is full
 			Continue
 		}
 		
@@ -75,10 +86,11 @@
 	}
 Return
 
-#IfWinActive
 
 
 ^p::Pause
+
+^r::Reload
 
 ^s::Exitapp
 
