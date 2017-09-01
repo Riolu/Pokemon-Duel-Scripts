@@ -12,4 +12,4 @@ and playing the same quest all the time is rather boring and arduous.
 As a result, scripts are written to liberate our labor. 
 We needn't make moves on our own and everything is done automatically.
 
-Notice for now this script is designed for 360*670.
+Notice this script can self-adapt to the window.
